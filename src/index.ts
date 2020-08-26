@@ -85,11 +85,11 @@ export default function assets(_opts: Partial<Options> = {}) {
         return;
       }
 
-      let code = `export const wasmUrl = import.meta.ROLLUP_FILE_URL_${referenceId};`;
-      code += `import lib from "${LIB_IMPORT}"`;
-      code += `export const modulePromise = /*@__PURE__*/lib.compile(wasmUrl);`;
-      code += `export const instancePromise = /*@__PURE__*/lib.instantiate(modulePromise);`;
-      code += `export const instantiate = importObject => lib.instantiate(modulePromise, importObject);`;
+      let code = `export const wasmUrl = import.meta.ROLLUP_FILE_URL_${referenceId};\n`;
+      code += `import * as lib from "${LIB_IMPORT}"\n`;
+      code += `export const modulePromise = /*@__PURE__*/lib.compile(wasmUrl);\n`;
+      code += `export const instancePromise = /*@__PURE__*/lib.instantiate(wasmUrl);\n`;
+      code += `export const instantiate = importObject => lib.instantiate(wasmUrl, importObject);\n`;
 
       return code;
     },
