@@ -51,7 +51,8 @@ export default function assets(_opts: Partial<Options> = {}) {
       const source = await fs.readFile(assetPath);
 
       const options = opts.compilerOptions;
-      options.binaryFile ??= basename(id, "ts") + ".wasm";
+      options.binaryFile ??= basename(id, ".ts") + ".wasm";
+      options.textFile ??= basename(options.binaryFile, ".wasm") + ".wat";
 
       const { stderr, stdout, ...files } = asCompiler.compileString(
         source.toString(),
