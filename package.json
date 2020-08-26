@@ -4,11 +4,9 @@
   "description": "A Rollup plugin to import assembly script modules using @assemblyscript/loader.",
   "main": "legacy/index.js",
   "module": "dist/index.js",
-  "types": "types/index.d.ts",
   "files": [
     "legacy",
-    "dist",
-    "types"
+    "dist"
   ],
   "scripts": {
     "build": "rollup -c",
