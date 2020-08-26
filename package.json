@@ -1,0 +1,50 @@
+{
+  "name": "@sebastianspeitel/rollup-plugin-assemblyscript-loader",
+  "version": "0.0.1",
+  "description": "A Rollup plugin to import assembly script modules using @assemblyscript/loader.",
+  "main": "legacy/index.js",
+  "module": "dist/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "legacy",
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianSpeitel/rollup-plugin-assemblyscript-loader.git"
+  },
+  "keywords": [
+    "rollup-plugin",
+    "assets"
+  ],
+  "author": "Sebastian Speitel",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/SebastianSpeitel/rollup-plugin-assemblyscript-loader/issues"
+  },
+  "homepage": "https://github.com/SebastianSpeitel/rrollup-plugin-assemblyscript-loader#readme",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.14.9",
+    "@rollup/pluginutils": "^3.1.0",
+    "ts-node": "^9.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-typescript": "^5.0.2",
+    "@sebastianspeitel/rollup-plugin-assets": "^0.2.0",
+    "@types/node": "^14.0.27",
+    "assemblyscript": "^0.14.9",
+    "rollup": "^2.23.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "@assemblyscript/loader": "*"
+  }
+}
