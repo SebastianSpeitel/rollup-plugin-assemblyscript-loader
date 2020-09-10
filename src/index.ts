@@ -8,6 +8,7 @@ import { source as libSource } from "asset:./static/lib.js";
 interface Options {
   include: FilterPattern;
   exclude: FilterPattern;
+  emitText: boolean;
   compilerOptions: asCompiler.CompilerOptions;
 }
 const PREFIX = "assemblyscript:";
@@ -16,6 +17,7 @@ const LIB_IMPORT = "__assemblyscript-loader";
 const defaultOpts: Options = {
   include: /^assemblyscript:.*/,
   exclude: null,
+  emitText: true,
   compilerOptions: {}
 };
 
@@ -70,6 +72,8 @@ export default function assets(_opts: Partial<Options> = {}) {
       for (let name of Object.keys(files) as Array<keyof typeof files>) {
         const source = files[name];
         if (!source) continue;
+        if (!opts.emitText && name === options.textFile) continue;
+
         const refId = this.emitFile({
           type: "asset",
           name,

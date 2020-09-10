@@ -65,6 +65,13 @@ Default: `{}`
 
 CompilerOptions passed to asc to compile the assemblyscript module.
 
+### `emitText`
+
+Type: `bool`<br>
+Default: `true`
+
+Whether to emit the `.wat` file of the compiled module.
+
 ### `exclude`
 
 Type: `RegExp | string | string[]`<br>
