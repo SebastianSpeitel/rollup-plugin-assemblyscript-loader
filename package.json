@@ -1,6 +1,6 @@
 {
   "name": "@sebastianspeitel/rollup-plugin-assemblyscript-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Rollup plugin to import assembly script modules using @assemblyscript/loader.",
   "main": "legacy/index.js",
   "module": "dist/index.js",
